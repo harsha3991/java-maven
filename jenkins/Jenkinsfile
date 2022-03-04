@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('javadoc') {
             steps {
-                sh 'javadoc *'
+                sh 'javadoc src/main/java/com/mycompany/app/'
             }
         }        
     }
