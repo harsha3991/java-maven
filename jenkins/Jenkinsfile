@@ -10,15 +10,11 @@ pipeline {
         stage('javadoc') {
             steps {                
                 sh '''
-                cd src/main/java/com/mycompany/app/
+                mkdir - p src/javadoc/
+                cd src/javadoc/
+                javadoc ../* -subpackages
                 javadoc App.java'''
             }
         }        
-    }
-    post {
-        always {
-            echo 'No converter for Publisher: hudson.tasks.JavadocArchiver'
-            PublishJavadoc(src/main/java/com/mycompany/app/)
-        }
     }
 }
