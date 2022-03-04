@@ -6,7 +6,7 @@ pipeline {
                 sh '''
                 mkdir - p src/javadoc/
                 cd src/javadoc/
-                javadoc ../* -subpackages
+                javadoc ../* -subpackages *.java
                 javadoc App.java'''
             }
         }        
