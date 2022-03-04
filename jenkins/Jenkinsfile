@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('javadoc') {
             steps {
-                sh 'javadoc src/main/java/com/mycompany/app/'
+                sh 'javadoc -sourcepath src/main/java/com/mycompany/app/ -subpackages java'
             }
         }        
     }
