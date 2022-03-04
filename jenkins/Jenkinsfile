@@ -18,6 +18,7 @@ pipeline {
     post {
         always {
             echo 'No converter for Publisher: hudson.tasks.JavadocArchiver'
+            PublishJavadoc(src/main/java/com/mycompany/app/)
         }
     }
 }
