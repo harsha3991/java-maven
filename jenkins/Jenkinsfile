@@ -1,10 +1,23 @@
 pipeline {
     agent any
-    stages {
-        stage('javadoc') {
+    stages {    
+        stage('Checkout Scm') {
             steps {
-                sh '''javadoc src/main/java/com/mycompany/app/App.java'''
+                git 'https://github.com/JynLeazy/java-maven.git'
+            }
+        }
+        
+        stage('javadoc') {
+            steps {                
+                sh '''
+                cd src/main/java/com/mycompany/app/
+                javadoc App.java'''
             }
         }        
+    }
+    post {
+        always {
+            echo 'No converter for Publisher: hudson.tasks.JavadocArchiver'
+        }
     }
 }
