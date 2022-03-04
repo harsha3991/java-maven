@@ -8,7 +8,7 @@
 * @author  Harsha3991
 * @version 1.0
 * @since   08/30/2021
-* <img src="doc-files/maven.png">
+* <img src="src/main/java/com/mycompany/app/doc-files/maven.png">
 */
 package com.mycompany.app;
 
