@@ -4,9 +4,9 @@ pipeline {
         stage('javadoc') {
             steps {                
                 sh '''
-                mkdir -p src/javadoc/
-                cd src/javadoc/
-                javadoc ../* -subpackages *.java
+                mkdir -p javadoc/
+                cd javadoc/
+                javadoc ../src/* -subpackages *.java
                 javadoc App.java'''
             }
         }        
