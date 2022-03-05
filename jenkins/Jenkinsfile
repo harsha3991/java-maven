@@ -8,6 +8,7 @@ pipeline {
                 cd javadoc/
                 javadoc ../src//main/java/com/mycompany/app/App.java
                 '''
+                javadoc javadocDir: 'javadoc', keepAll: false
             }
         }        
     }
