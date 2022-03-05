@@ -10,6 +10,7 @@ pipeline {
                 mvn clean compile pmd:pmd checkstyle:checkstyle findbugs:findbugs
                 '''
                 javadoc javadocDir: 'javadoc', keepAll: false
+                junit 'tarjet/surefire-reports/*.xml'
                 recordIssues(tools: [checkStyle(pattern: 'target/checkstyle-result.xml'), pmdParser(pattern: 'target/pmd.xml'), findBugs(pattern: 'target/findbugsXml.xml', useRankAsPriority: true)])
             }
         }        
