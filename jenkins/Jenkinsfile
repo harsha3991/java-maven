@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {            
         stage('javadoc') {
-            steps {                
+            steps {
+                // Clean before build
+                cleanWs()
                 sh '''
                 mkdir -p javadoc/
                 cd javadoc/
@@ -14,5 +16,16 @@ pipeline {
                 recordIssues(tools: [checkStyle(pattern: 'target/checkstyle-result.xml'), pmdParser(pattern: 'target/pmd.xml'), findBugs(pattern: 'target/findbugsXml.xml', useRankAsPriority: true)])
             }
         }        
+    }
+    post {
+    // Clean after build
+        always {
+            cleanWs(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true,
+                    patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
+                               [pattern: '.propsfile', type: 'EXCLUDE']])
+        }
     }
 }
