@@ -107,4 +107,12 @@
       </plugin>
     </plugins>
   </reporting>
+  <distributionManagement> 
+    <repository>
+      <id>nexus</id>
+      <name>Internal Releases</name>
+      <url>http://10.0.0.155:8081/repository/jksl-maven/</url>
+      <layout>default</layout>
+    </repository>
+  </distributionManagement>  
 </project>
