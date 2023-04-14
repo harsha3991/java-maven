@@ -1,3 +1,15 @@
+// Simple Java-Maven project to test
+// the jenkins javadoc plugin
+ 
+/**
+* <h1>App</h1>
+* class that prints Hello World!
+*
+* @author  Harsha3991
+* @version 1.0
+* @since   08/30/2021
+* <img src="src/main/java/com/mycompany/app/doc-files/maven.png">
+*/
 package com.mycompany.app;
 
 /**
