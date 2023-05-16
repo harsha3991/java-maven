@@ -6,7 +6,7 @@ package com.mycompany.app;
 public class App
 {
 
-    private final String message = "Hello let start working in devops";
+    private final String message = "Hello let start working in devops/sre";
 
     public App() {}
 
